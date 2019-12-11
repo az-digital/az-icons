@@ -1,0 +1,28 @@
+{
+  "name": "az-icons",
+  "version": "0.0.1",
+  "description": "Arizona icons",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/uadigital/ua-brand-icons.git"
+  },
+  "author": "UADIGITAL",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/uadigital/ua-brand-icons#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-iconfont": "^10.0.2",
+    "gulp-iconfont-css": "^3.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-svgmin": "^2.1.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {}
+}
