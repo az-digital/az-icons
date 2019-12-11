@@ -26,7 +26,7 @@ function svgtofont() {
                           path: 'templates/az-icons-template.css', // The path to the template that will be used to create the CSS file.
                           targetPath: 'az-icons.css', // The path where the final CSS file will be generated.
                           fontPath: './', // The path to the icon font file.
-                          cssClass: 'az-' // Prefix for the icon class names.
+                          cssClass: 'az' // Prefix for the icon class names.
         }))
         .pipe(iconfont({
                        startUnicode: 0xE600,
