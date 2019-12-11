@@ -1,0 +1,9 @@
+image: uadigital/arizona-node-base:0.0.2
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - aws configure set preview.cloudfront true
+            - aws s3 sync --cache-control max-age=691200 dist/ s3://${AWS_S3_BUCKET_CDN}/lib/az-icons/master/
+            - aws cloudfront create-invalidation --distribution-id ${CF_DISTRO_ID} --paths /lib/az-icons/master/*
