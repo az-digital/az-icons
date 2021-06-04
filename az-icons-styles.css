@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?d54800');
+  src:  url('fonts/icomoon.eot?d54800#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?d54800') format('truetype'),
+    url('fonts/icomoon.woff?d54800') format('woff'),
+    url('fonts/icomoon.svg?d54800#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arizona:before {
+  content: "\e900";
+}
+.icon-award:before {
+  content: "\e901";
+}
+.icon-cost:before {
+  content: "\e902";
+}
+.icon-facebook:before {
+  content: "\e903";
+}
+.icon-financial-aid:before {
+  content: "\e904";
+}
+.icon-grad-cap:before {
+  content: "\e905";
+}
+.icon-instagram:before {
+  content: "\e906";
+}
+.icon-linkedin:before {
+  content: "\e907";
+}
+.icon-majors-and-degrees:before {
+  content: "\e908";
+}
+.icon-map-marker:before {
+  content: "\e909";
+}
+.icon-pinterest:before {
+  content: "\e90a";
+}
+.icon-scholarship:before {
+  content: "\e90b";
+}
+.icon-sign-post:before {
+  content: "\e90c";
+}
+.icon-spotify:before {
+  content: "\e90d";
+}
+.icon-spring-fling:before {
+  content: "\e90e";
+}
+.icon-tiktok:before {
+  content: "\e90f";
+}
+.icon-twitter:before {
+  content: "\e910";
+}
+.icon-wildcat:before {
+  content: "\e911";
+}
+.icon-youtube:before {
+  content: "\e912";
+}
