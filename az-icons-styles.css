@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?d54800');
-  src:  url('fonts/icomoon.eot?d54800#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?d54800') format('truetype'),
-    url('fonts/icomoon.woff?d54800') format('woff'),
-    url('fonts/icomoon.svg?d54800#icomoon') format('svg');
+  font-family: 'az-icons';
+  src:  url('fonts/az-icons.eot?d54800');
+  src:  url('fonts/az-icons.eot?d54800#iefix') format('embedded-opentype'),
+    url('fonts/az-icons.ttf?d54800') format('truetype'),
+    url('fonts/az-icons.woff?d54800') format('woff'),
+    url('fonts/az-icons.svg?d54800#az-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="az-icon-"], [class*=" az-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'az-icons' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,60 +25,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arizona:before {
+.az-icon-arizona:before {
   content: "\e900";
 }
-.icon-award:before {
+.az-icon-award:before {
   content: "\e901";
 }
-.icon-cost:before {
+.az-icon-cost:before {
   content: "\e902";
 }
-.icon-facebook:before {
+.az-icon-facebook:before {
   content: "\e903";
 }
-.icon-financial-aid:before {
+.az-icon-financial-aid:before {
   content: "\e904";
 }
-.icon-grad-cap:before {
+.az-icon-grad-cap:before {
   content: "\e905";
 }
-.icon-instagram:before {
+.az-icon-instagram:before {
   content: "\e906";
 }
-.icon-linkedin:before {
+.az-icon-linkedin:before {
   content: "\e907";
 }
-.icon-majors-and-degrees:before {
+.az-icon-majors-and-degrees:before {
   content: "\e908";
 }
-.icon-map-marker:before {
+.az-icon-map-marker:before {
   content: "\e909";
 }
-.icon-pinterest:before {
+.az-icon-pinterest:before {
   content: "\e90a";
 }
-.icon-scholarship:before {
+.az-icon-scholarship:before {
   content: "\e90b";
 }
-.icon-sign-post:before {
+.az-icon-sign-post:before {
   content: "\e90c";
 }
-.icon-spotify:before {
+.az-icon-spotify:before {
   content: "\e90d";
 }
-.icon-spring-fling:before {
+.az-icon-spring-fling:before {
   content: "\e90e";
 }
-.icon-tiktok:before {
+.az-icon-tiktok:before {
   content: "\e90f";
 }
-.icon-twitter:before {
+.az-icon-twitter:before {
   content: "\e910";
 }
-.icon-wildcat:before {
+.az-icon-wildcat:before {
   content: "\e911";
 }
-.icon-youtube:before {
+.az-icon-youtube:before {
   content: "\e912";
 }
