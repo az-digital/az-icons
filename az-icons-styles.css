@@ -10,7 +10,6 @@
   font-display: block;
 }
 
-
 [class^="az-icon-"]::before, [class*=" az-icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'az-icons' !important;
@@ -82,4 +81,7 @@
 }
 .az-icon-youtube:before {
   content: "\e912";
+}
+.az-icon-vimeo:before {
+  content: "\e913";
 }
