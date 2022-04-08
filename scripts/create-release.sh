@@ -4,6 +4,7 @@
 # create-release.sh: prepare a release
 #
 # Required environment variables
+# - AZ_ICONS_SOURCE_DIR Source directory for files and directories
 # - AZ_RELEASE_VERSION New release version
 #
 #------------------------------------------------------------------------------
@@ -39,6 +40,10 @@ fi
 #------------------------------------------------------------------------------
 # Initial run-time error checking.
 
+[ -n "$AZ_ICONS_SOURCE_DIR" ] \
+  || errorexit "No source directory specified"
+[ -d "$AZ_ICONS_SOURCE_DIR" ] \
+  || errorexit "Couldn't find the source directory ${AZ_ICONS_SOURCE_DIR}"
 [ -n "$AZ_RELEASE_VERSION" ] \
   || errorexit "No new version specified for the release"
 
@@ -46,6 +51,9 @@ fi
 # Set up with the old saved npm configuration.
 
 copy-npm-config
+
+cd "$AZ_ICONS_SOURCE_DIR" \
+  || errorexit "Can't change to the ${AZ_ICONS_SOURCE_DIR} directory holding the files for the release"
 
 npm version --unsafe-perm --no-git-tag-version ${AZ_RELEASE_VERSION} \
   || errorexit "Failed to bump the version number to ${AZ_RELEASE_VERSION}"

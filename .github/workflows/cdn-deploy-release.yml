@@ -33,10 +33,10 @@ jobs:
 
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
-          aws s3 sync --delete --cache-control max-age=691200 --exclude ".git*" --exclude demo.html . s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/${{ github.event.inputs.version }}/
+          aws s3 sync --delete --cache-control max-age=691200  dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/${{ github.event.inputs.version }}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/az-icons/${{ github.event.inputs.version }}/*
 
       - name: Update 'latest' CDN assets to S3 + CloudFront
         run: |
-          aws s3 sync --delete --cache-control max-age=691200 --exclude ".git*" --exclude demo.html . s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/latest/
+          aws s3 sync --delete --cache-control max-age=691200 dist/ s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/latest/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/az-icons/latest/*
