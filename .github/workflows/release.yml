@@ -5,6 +5,7 @@ on:
       version:
         description: The version to tag and release
         required: true
+
 jobs:
   release:
     name: Create Release
@@ -14,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ssh-key: ${{ secrets.AZ_ICONS_DEPLOY_KEY }}
+
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
@@ -26,9 +28,11 @@ jobs:
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_ICONS_SOURCE_DIR=az-icons-src" >> ${GITHUB_ENV}
           echo "AZ_ICONS_FROZEN_DIR=/azbuild/az-icons" >> ${GITHUB_ENV}
+
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
+
       - name: Unconditionally rebuild and save the Docker image
         run: |
           workingtitle=$(docker build -q . )
@@ -41,9 +45,11 @@ jobs:
           docker tag "$workingtitle" "$ephemeral"
           docker push "$ephemeral"
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
+
       - name: Build variables
         run: |
           echo "AZ_VERSION=${{ github.event.inputs.version }}" >> ${GITHUB_ENV}
+
       - name: Update version
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -53,6 +59,7 @@ jobs:
           git commit -m '${{ github.event.inputs.version }}'
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -64,14 +71,17 @@ jobs:
           release_name: "v${{ env.AZ_VERSION }}"
           draft: false
           prerelease: false #${{ contains(env.AZ_VERSION, '-alpha') }}
+
       - name: Save new SHA to file
         run: |
           echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > variables.json
+
       - name: Upload variables
         uses: actions/upload-artifact@v1
         with:
           name: artifact
           path: variables.json
+
   dispatch:
     needs: release
     strategy:
@@ -85,9 +95,11 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: artifact
+
       - name: Update environment variables
         run: |
           echo "RELEASE_SHA=$(cat artifact/variables.json | jq -r '.sha' )" >> ${GITHUB_ENV}
+
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59
         with:
