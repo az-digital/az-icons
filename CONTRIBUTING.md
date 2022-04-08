@@ -57,6 +57,7 @@ When new icons are added the font files will need to be regenerated:
 Add your new files to this repository in the following structure.
 
 ```
+az-icons
 ├── demo.html
 └── src
     ├── az-icons-styles.css
