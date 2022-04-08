@@ -1,11 +1,7 @@
 name: Build,  tag, & deploy CDN assets for release
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: The version to tag and release
-        required: true
-
+  repository_dispatch:
+    types: az_icons_release
 jobs:
   deploy:
     name: Build & deploy CDN assets

@@ -1,0 +1,23 @@
+{
+    "name": "az-icons",
+    "version": "1.0.0",
+    "version_short": "1.0",
+    "description": "Supplementary Icon Set for the University of Arizona.",
+    "style": "css/az-icons-styles.css",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/az-digital/az-icons.git"
+    },
+    "author": "Arizona Digital Contributors",
+    "bugs": {
+        "url": "https://github.com/az-digital/az-icons/issues"
+    },
+    "license": "MIT",
+    "homepage": "https://digital.arizona.edu/arizona-bootstrap/docs/2.0/icons",
+    "files": [
+        "svg/*.{svg}",
+        "png/*.{png}",
+        "fonts/*.{eot svg ttf woff}",
+        "*.{css}"
+    ]
+}
