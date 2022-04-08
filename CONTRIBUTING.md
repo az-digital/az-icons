@@ -74,9 +74,16 @@ Add your new files to this repository in the following structure.
 Then you should be able to use npm to prepare the new files for distribution.
 
 First install the package dependencies
-`npm install`
+
+```
+npm install
+```
+
 Next use the automated preparation tools to recreate the dist folder.
-`npm run dist`
+
+```
+npm run dist
+```
 
 See the [package.json](./package.json) for all of the available commands.
 
