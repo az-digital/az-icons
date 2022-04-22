@@ -90,7 +90,7 @@ See the [package.json](./package.json) for all of the available commands.
 
 ## Pull Request Process
 1. Create an issue on GitHub with the appropriate [issue type template](https://github.com/az-digital/az-icons/issues/new/choose).
-2. Create a branch on the arizona-bootstrap repository using the issue type naming convention of `<issue-type>/<issue-number>`. Example: `feature/123` or `bug/123`.
+2. Create a branch on the az-icons repository using the issue type naming convention of `<issue-type>/<issue-number>`. Example: `feature/123` or `bug/123`.
 3. Make and commit your changes.
 4. Create a pull request to be reviewed by the Arizona Digital community. Be sure to include a reference to the issue in your pull request description. Read more about [linking a pull request to an issue](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue).
 
