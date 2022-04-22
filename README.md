@@ -10,7 +10,7 @@ Compile Arizona Icons with your own asset pipeline by downloading our source
 CSS, SVG, PNG, and font files. This option requires some additional tooling:
 
 ### Arizona Digital CDN
-Skip the download with the Arizona Digital CDN to deliver cached version of
+Skip the download with the Arizona Digital CDN to deliver a cached version of
 Arizona Icons’s CSS and font files to your project.
 
 When choosing which version to include in your project, take these three choices
