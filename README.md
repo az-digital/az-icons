@@ -16,15 +16,17 @@ Arizona Icons’s CSS and font files to your project.
 When choosing which version to include in your project, take these three choices
 into account:
 
-**Stable** version: This option is the most recent version that has the most
-wide-spread adoption on sites.
+**Stable** version: Each tagged release has a permanent CDN link. This version
+has to be upgraded on your project manually.
 ```
 <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/1.0.0/az-icons-styles.css" crossorigin="anonymous">
 ```
 
-**Latest** version: Latest tagged version. The most recently tagged stable
-release of AZ Bootstrap. While this has not been explicitly tested on this
-version of az_barrio, it’s probably OK to use on production sites. Please
+**Latest** tagged version: The contents of this CDN link update automatically
+every time we tag a release of `az-icons`. While there is some risk involved
+with this link, for example, the icons could randomly break on your site, the
+up-side is that you get access to new icons and upgrades to performance on each
+release automatically. It's probably OK to use on production sites. Please
 report bugs to the AZ Digital team.
 ```
 <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/latest/az-icons-styles.css" crossorigin="anonymous">
