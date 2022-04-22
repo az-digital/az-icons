@@ -95,7 +95,7 @@ See the [package.json](./package.json) for all of the available commands.
 4. Create a pull request to be reviewed by the Arizona Digital community. Be sure to include a reference to the issue in your pull request description. Read more about [linking a pull request to an issue](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue).
 
 ## Policies
-Contributions to Arizona Bootstrap must adhere to Arizona Digital's policies and [Code of Conduct](https://github.com/az-digital/policies/blob/main/code-of-conduct.md).
+Contributions to Arizona Icons must adhere to Arizona Digital's policies and [Code of Conduct](https://github.com/az-digital/policies/blob/main/code-of-conduct.md).
 
 - [Arizona Digital merging policies](https://github.com/az-digital/policies/blob/main/code-of-conduct.md)
 - [Arizona Digital Code of Conduct](https://github.com/az-digital/policies/blob/main/code-of-conduct.md)
