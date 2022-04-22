@@ -24,7 +24,7 @@ has to be upgraded on your project manually.
 
 **Latest** tagged version: The contents of this CDN link update automatically
 every time we tag a release of `az-icons`. While there is some risk involved
-with this link, for example, the icons could randomly break on your site, the
+with this link (for example, the icons could randomly break on your site), the
 up-side is that you get access to new icons and upgrades to performance on each
 release automatically. It's probably OK to use on production sites. Please
 report bugs to the AZ Digital team.
