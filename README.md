@@ -23,8 +23,8 @@ wide-spread adoption on sites.
 ```
 
 **Latest** version: Latest tagged version. The most recently tagged stable
-release of AZ Bootstrap. While this has not been explicitly tested on this
-version of az_barrio, it’s probably OK to use on production sites. Please
+release of AZ Icons. While this has not been tested extensively out in the wild,
+it’s probably OK to use on production sites. Please
 report bugs to the AZ Digital team.
 ```
 <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/latest/az-icons-styles.css" crossorigin="anonymous">
