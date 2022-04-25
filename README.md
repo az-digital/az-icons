@@ -34,7 +34,7 @@ release automatically. It's probably OK to use on production sites. Please
 
 **Main** version: Latest dev version. This is the tip of the main branch of
 AZ Icons. Please do not use on production unless you are following the AZ
-Icons project closely. Please report bugs to the AZ Digital team.
+Icons project closely. Please [report bugs to the AZ Digital team](https://github.com/az-digital/az-icons/issues/new?assignees=&labels=&template=bug_report.md).
 ```
 <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" crossorigin="anonymous">
 ```
