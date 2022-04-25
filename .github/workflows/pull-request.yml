@@ -1,0 +1,10 @@
+name: Pull request
+on: [push,pull_request]
+
+jobs:
+  lint-bash:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Run ShellCheck
+        uses: azohra/shell-linter@v0.6.0

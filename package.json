@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint:bash": "bash -c 'shopt -s globstar nullglob; shellcheck **/*.{sh,ksh,bash}'"
+  },
+  "devDependencies": {
+    "shellcheck": "^1.1.0"
+  }
+}
