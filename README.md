@@ -1,6 +1,6 @@
 # Arizona Icons
-Find more detailed information on how to use `az-icons` within the (Arizona
-Bootstrap Docs)[https://digital.arizona.edu/arizona-bootstrap/docs/2.0/icons/].
+Find more detailed information on how to use `az-icons` within the [Arizona
+Bootstrap Docs](https://digital.arizona.edu/arizona-bootstrap/docs/2.0/icons/).
 ## Download
 Download Arizona Icons to get the compiled CSS and font files, source code, or
 include it with your favorite package managers like npm, RubyGems, and more.
