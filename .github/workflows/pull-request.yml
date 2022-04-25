@@ -1,5 +1,5 @@
-name: Pull request
-on: [push,pull_request]
+name: Pull request checks
+on: pull_request
 
 jobs:
   lint-bash:
