@@ -27,7 +27,7 @@ every time we tag a release of `az-icons`. While there is some risk involved
 with this link (for example, the icons could randomly break on your site), the
 up-side is that you get access to new icons and upgrades to performance on each
 release automatically. It's probably OK to use on production sites. Please
-report bugs to the AZ Digital team.
+[report bugs to the AZ Digital team](https://github.com/az-digital/az-icons/issues/new?assignees=&labels=&template=bug_report.md).
 ```
 <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/latest/az-icons-styles.css" crossorigin="anonymous">
 ```
