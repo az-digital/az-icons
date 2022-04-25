@@ -75,7 +75,7 @@ Once each icon is saved as its own SVG file, they can be imported to IcoMoon and
 mapped to [Unicode's Private Use Area
 (PUA)](https://en.wikipedia.org/wiki/Private_Use_Areas) code points. This means
 the glyphs will not be associated with any letters or characters which may be
-otherwise used symantically.
+otherwise used semantically.
 
 When new icons are added the font files will need to be regenerated:
 
