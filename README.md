@@ -86,7 +86,7 @@ When new icons are added the font files will need to be regenerated:
   code `e901`).
 - [ ] Make sure to name the font **az-icons** before clicking IcoMoon App's font
   download button (the name can be set by clicking the small gear icon next to
-  the download button first)
+  the download button first).
 - [ ] Do not use the automatically generated CSS file from IcoMoon, instead only
   add the new icon class declaration (the default stylesheet provided by IcoMoon
   has been altered to enhance usage).
