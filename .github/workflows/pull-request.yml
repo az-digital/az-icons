@@ -10,7 +10,4 @@ jobs:
       - name: Run ShellCheck
         uses: azohra/shell-linter@v0.6.0
         with:
-          exclude-paths:
-            - Dockerfile
-            - .github/CODEOWNERS
-            - .github/ISSUE_TEMPLATE
+          exclude-paths: Dockerfile, .github/CODEOWNERS, .github/ISSUE_TEMPLATE
