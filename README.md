@@ -40,7 +40,7 @@ Icons project closely. Please report bugs to the AZ Digital team.
 ```
 
 ### Package Managers
-Pull in Arizona Icons’ source files into nearly any project with some of
+Pull the Arizona Icons source files into nearly any project with some of
 the most popular package managers.
 
 **npm**
