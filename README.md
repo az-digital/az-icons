@@ -7,7 +7,7 @@ include it with your favorite package managers like npm, RubyGems, and more.
 
 ### Source Files
 Compile Arizona Icons with your own asset pipeline by downloading our source
-CSS, SVG, PNG, and font files. This option requires some additional tooling:
+CSS, SVG, PNG, and font files. This option requires some additional tooling.
 
 ### Arizona Digital CDN
 Skip the download with the Arizona Digital CDN to deliver a cached version of
