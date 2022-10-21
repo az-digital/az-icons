@@ -1,11 +1,14 @@
-name: Deploy CDN assets for release
+name: Build,  tag, & deploy CDN assets for release
 on:
-  repository_dispatch:
-    types: az_icons_release
+  workflow_dispatch:
+    inputs:
+      version:
+        description: The version to tag and release
+        required: true
 
 jobs:
   deploy:
-    name: Deploy CDN assets
+    name: Build & deploy CDN assets
     runs-on: ubuntu-20.04
 
     steps:
@@ -21,12 +24,23 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
 
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v${{ github.event.inputs.version }}"
+          release_name: "v${{ github.event.inputs.version }}"
+          draft: false
+          prerelease: false
+
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
-          aws s3 sync --delete --cache-control max-age=691200 --exclude ".git*" --exclude demo.html . s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/${{ github.event.inputs.version }}/
+          aws s3 sync --delete --cache-control max-age=691200  dist/. s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/${{ github.event.inputs.version }}/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/az-icons/${{ github.event.inputs.version }}/*
 
       - name: Update 'latest' CDN assets to S3 + CloudFront
         run: |
-          aws s3 sync --delete --cache-control max-age=691200 --exclude ".git*" --exclude demo.html . s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/latest/
+          aws s3 sync --delete --cache-control max-age=691200  dist/. s3://${{ secrets.AZ_DIGITAL_CDN_BUCKET }}/lib/az-icons/latest/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AZ_DIGITAL_CDN }} --paths /lib/az-icons/latest/*
