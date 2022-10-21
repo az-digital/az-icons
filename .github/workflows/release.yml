@@ -106,4 +106,5 @@ jobs:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: az_icons_release
-          client-payload: '{"version": "${{ github.event.inputs.version }}", "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}"}'
+          client-payload: '{"version": "${{ github.event.inputs.version }}",
+          "ref": "${{ env.RELEASE_SHA }}", "sha": "${{ env.RELEASE_SHA }}"}'
