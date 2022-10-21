@@ -1,14 +1,11 @@
-name: Build,  tag, & deploy CDN assets for release
+name: Deploy CDN assets for release
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: The version to tag and release
-        required: true
+  repository_dispatch:
+    types: az_icons_release
 
 jobs:
   deploy:
-    name: Build & deploy CDN assets
+    name: Deploy CDN assets
     runs-on: ubuntu-20.04
 
     steps:
@@ -23,17 +20,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "v${{ github.event.inputs.version }}"
-          release_name: "v${{ github.event.inputs.version }}"
-          draft: false
-          prerelease: false
 
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
