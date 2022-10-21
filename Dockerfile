@@ -35,3 +35,4 @@ RUN apt-get update \
   && npm install -g npm-check-updates@12.0.0 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
+  
