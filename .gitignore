@@ -45,3 +45,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+
+### NPM ###
+package-lock.json

@@ -26,8 +26,7 @@
     "license": "UNLICENSED",
     "homepage": "https://digital.arizona.edu/arizona-bootstrap/docs/2.0/icons",
     "files": [
-        "dist/{svg,png,fonts}/*.{png,svg,woff,ttf,eot}",
-        "dist/*.{css}"
+        "dist/*"
     ],
     "dependencies": {
         "clean-css-cli": "^5.6.0",
