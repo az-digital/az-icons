@@ -92,6 +92,7 @@ jobs:
         repo:
           - az-digital/az-icons
           - az-digital/az-icons-packagist
+
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
