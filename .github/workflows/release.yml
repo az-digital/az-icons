@@ -29,6 +29,9 @@ jobs:
           echo "AZ_ICONS_SOURCE_DIR=az-icons-src" >> ${GITHUB_ENV}
           echo "AZ_ICONS_FROZEN_DIR=/azbuild/az-icons" >> ${GITHUB_ENV}
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
