@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    reviewers:
+      - "az-digital/developers"
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
+    labels:
+      - "ci"
