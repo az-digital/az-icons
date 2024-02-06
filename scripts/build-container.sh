@@ -98,7 +98,7 @@ else
   logmessage "Making a throwaway container, ID ${workingtitle}, to extract the updated npm setup"
   docker run --name "$tempname" "$workingtitle" 'true' \
     || errorexit "Failed to run a container based on the image ${workingtitle}"
-  docker cp "${tempname}:${AZ_ICONS_FROZEN_DIR}/." . \
+  docker cp  -a "${tempname}:${AZ_ICONS_FROZEN_DIR}/." . \
     || errorexit "Couldn't copy the saved npm setup to the actual source directory"
   docker rm "$tempname" \
     || errorexit "Failed to clean up the temporary container ${tempname}"
@@ -128,4 +128,4 @@ logmessage "The image ID is ${imageid} (you can use this to run your own Docker 
 docker run -t -i --rm -p 9001:9001 -v "$(pwd)":/az-icons-src "$imageid" \
   || normalexit "Exited with status ${?}"
 
-normalexit "The Docker container stopped (status ${?})"
+normalexit "The web server hosting the review site in the Docker container stopped (status ${?})"

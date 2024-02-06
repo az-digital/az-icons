@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:18.18.0-bookworm-slim
+FROM --platform=linux/amd64 node:20.11.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
@@ -32,6 +32,6 @@ RUN apt-get update \
   && npm config set cache='/tmp/.npm' \
   && chmod 755 /root \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.0.0 \
+  && npm install --location=global npm-check-updates@16.14.12 \
   && npm install \
   && find node_modules -name '.DS_Store' -exec rm {} \;
