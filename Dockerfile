@@ -16,22 +16,37 @@ ENV NO_UPDATE_NOTIFIER 1
 
 WORKDIR $AZ_ICONS_SOURCE_DIR
 
-# COPY "package.json" "$AZ_ICONS_FROZEN_DIR"/
+COPY "package.json" "$AZ_ICONS_FROZEN_DIR"/
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    git \
-    python3 \
-    python3-pip \
-    python3-setuptools \
-    python3-wheel \
-    rsync \
+  ca-certificates-java \
+  curl \
+  git \
+  jq \
+  openjdk-17-jre-headless \
+  rsync \
+  unzip \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install 'awscli~=1.19.41' \
-  && cd "${AZ_ICONS_FROZEN_DIR}" \
-  && npm config set cache='/tmp/.npm' \
   && chmod 755 /root \
+  && touch /root/.npmrc \
   && chmod 644 /root/.npmrc \
-  && npm install -g npm-check-updates@12.0.0 \
+  && npm install --location=global npm-check-updates@16.14.12 \
+  && curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o /tmp/awscliv2.zip \
+  && unzip -d /tmp /tmp/awscliv2.zip \
+  && /tmp/aws/install \
+  && rm /tmp/awscliv2.zip \
+  && rm -Rf /tmp/aws
+
+WORKDIR $AZ_ICONS_FROZEN_DIR
+
+RUN mkdir /home/node/.npm \
+  && chown node:node /home/node/.npm \
+  && npm config set cache='/home/node/.npm' \
   && npm install \
-  && find node_modules -name '.DS_Store' -exec rm {} \;
+  && find node_modules -name '.DS_Store' -exec rm {} \; \
+  && chown -R node:node "$AZ_ICONS_FROZEN_DIR"
+
+USER node:node
+
+WORKDIR $AZ_ICONS_SOURCE_DIR
