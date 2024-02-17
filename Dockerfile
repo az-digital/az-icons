@@ -1,4 +1,4 @@
-FROM node:16.17.1-bullseye-slim
+FROM --platform=linux/amd64 node:20.11.0-bookworm-slim
 
 ENV LANG C.UTF-8
 
