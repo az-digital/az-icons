@@ -18,3 +18,15 @@ updates:
       - "az-digital/developers"
     labels:
       - "ci"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "az-digital/developers"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    open-pull-requests-limit: 10
+    labels:
+      - "ci"
