@@ -1,4 +1,4 @@
-FROM node:16.17.1-bullseye-slim
+FROM node:16.20.2-bullseye-slim
 
 ENV LANG C.UTF-8
 
