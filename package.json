@@ -1,6 +1,6 @@
 {
     "name": "az-icons",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "version_short": "1.0",
     "description": "Supplementary Icon Set for the University of Arizona.",
     "style": "dist/az-icons-styles.css",
