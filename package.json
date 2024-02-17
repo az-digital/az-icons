@@ -1,6 +1,6 @@
 {
     "name": "az-icons",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "version_short": "1.0",
     "description": "Supplementary Icon Set for the University of Arizona.",
     "style": "dist/az-icons-styles.css",
@@ -32,7 +32,7 @@
     "dependencies": {
         "clean-css-cli": "^5.6.0",
         "npm-run-all": "^4.1.5",
-        "rimraf": "^3.0.2",
+        "rimraf": "^5.0.5",
         "svgo": "^2.8.0"
     }
 }

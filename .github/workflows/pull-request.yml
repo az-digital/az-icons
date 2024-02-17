@@ -1,0 +1,13 @@
+name: Pull request checks
+on: pull_request
+
+jobs:
+  lint-bash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run ShellCheck
+        uses: azohra/shell-linter@v0.6.0
+        with:
+          exclude-paths: Dockerfile, .github/CODEOWNERS, .github/ISSUE_TEMPLATE
