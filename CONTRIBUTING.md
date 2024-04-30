@@ -12,7 +12,7 @@ If you want to get involved, you can:
 - Submit pull requests on GitHub
 
 Questions, bug reports or suggestions can also be emailed to
-[uadigital@email.arizona.edu](mailto:uadigital@email.arizona.edu) or
+[az-digital@web.arizona.edu](mailto:az-digital@web.arizona.edu) or
 (preferably!) reported on Slack.
 
 ## Icon Creation and Generation Process
