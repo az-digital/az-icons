@@ -15,7 +15,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
-
       - name: Set variables for Docker images
         run: |
           oldhash=${{ hashFiles('Dockerfile', 'package.json', 'package-lock.json', 'scripts/*') }}
@@ -28,14 +27,11 @@ jobs:
           echo "AZ_IMAGE_STEM=${imagestem}" >> ${GITHUB_ENV}
           echo "AZ_ICONS_SOURCE_DIR=/az-icons-src" >> ${GITHUB_ENV}
           echo "AZ_ICONS_FROZEN_DIR=/azbuild/az-icons" >> ${GITHUB_ENV}
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
-
       - name: Unconditionally rebuild and save the Docker image
         run: |
           workingtitle=$(docker build -q . )
@@ -48,11 +44,9 @@ jobs:
           docker tag "$workingtitle" "$ephemeral"
           docker push "$ephemeral"
           echo "AZ_EPHEMERAL_IMAGE=${ephemeral}" >> ${GITHUB_ENV}
-
       - name: Build variables
         run: |
           echo "AZ_VERSION=${{ github.event.inputs.version }}" >> ${GITHUB_ENV}
-
       - name: Update version
         run: |
           sudo touch config.yml
@@ -62,10 +56,9 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_ICONS_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
           git add dist package.json package-lock.json
-          git commit -m '${{ github.event.inputs.version }}'
+          git commit -m 'Bump version of `az-icons` to `${AZ_VERSION}` for release.'
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
-
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -78,17 +71,14 @@ jobs:
           prerelease: false
           body: |
             Release v${{ env.AZ_VERSION }}
-
       - name: Save new SHA to file
         run: |
           echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
-
       - name: Upload variables
         uses: actions/upload-artifact@v4
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}
-
   dispatch:
     needs: release
     strategy:
@@ -103,13 +93,11 @@ jobs:
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}
-
       - name: Update environment variables
         run: |
           variablesfile=${{ runner.temp }}/variables.json
           echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
           echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
-
       - name: Notify dependencies
         uses: peter-evans/repository-dispatch@v3
         with:
