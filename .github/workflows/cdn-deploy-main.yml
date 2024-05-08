@@ -1,4 +1,5 @@
 name: Build & deploy CDN assets
+run-name: Deploy CDN assets to the `main` bucket for `${GITHUB_SHA}`
 on:
   push:
     branches:
