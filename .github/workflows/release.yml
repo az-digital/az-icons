@@ -56,7 +56,7 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           docker run --rm -e "AZ_RELEASE_VERSION=${AZ_VERSION}" -v $(pwd):"${AZ_ICONS_SOURCE_DIR}" "$AZ_EPHEMERAL_IMAGE" create-release
           git add dist package.json package-lock.json
-          git commit -m 'Bump version of `az-icons` to `${AZ_VERSION}` for release.'
+          git commit -m "Bump version of \`az-icons\` to \`${AZ_VERSION}\` for release."
           git push
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
       - name: Create Release
