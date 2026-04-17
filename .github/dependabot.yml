@@ -12,7 +12,7 @@ updates:
       default-days: 5
     labels:
       - "dependencies"
-      - "ci"
+      - "javascript"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
