@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
       - name: Set variables for Docker images
@@ -28,7 +28,7 @@ jobs:
           echo "AZ_ICONS_SOURCE_DIR=/az-icons-src" >> ${GITHUB_ENV}
           echo "AZ_ICONS_FROZEN_DIR=/azbuild/az-icons" >> ${GITHUB_ENV}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4.0.0
       - name: Docker authentication
         run: |
           docker login "$AZ_DOCKER_REGISTRY" -u "$GITHUB_ACTOR" -p ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
           echo "RELEASE_SHA=$(git rev-parse HEAD)" >> ${GITHUB_ENV}
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
         with:
           target_commitish: ${{ env.RELEASE_SHA }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -75,7 +75,7 @@ jobs:
         run: |
           echo "{\"sha\": \"$(git rev-parse HEAD)\"}" > ${{ runner.temp }}/variables.json
       - name: Upload variables
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}
@@ -89,7 +89,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download variables
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: variables-json-artifact
           path: ${{ runner.temp }}
@@ -99,7 +99,7 @@ jobs:
           echo "RELEASE_SHA=$(cat ${variablesfile} | jq -r '.sha' )" >> ${GITHUB_ENV}
           echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
       - name: Notify dependencies
-        uses: peter-evans/repository-dispatch@v3
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
           repository: ${{ matrix.repo }}
