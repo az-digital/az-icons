@@ -20,6 +20,11 @@ errorexit () {
 }
 
 # Show progress on STDERR, unless explicitly quiet.
+logmessage () {
+  if [ -z "$AZ_QUIET" ]; then
+    echo "$1..." >&2
+  fi
+}
 normalexit () {
   if [ -z "$AZ_QUIET" ]; then
     echo "$1." >&2
@@ -47,5 +52,7 @@ cd "$AZ_ICONS_SOURCE_DIR" \
 
 npm version --unsafe-perm --no-git-tag-version "${AZ_RELEASE_VERSION}" \
   || errorexit "Failed to bump the version number to ${AZ_RELEASE_VERSION}"
+
+logmessage "Bumped the version to ${AZ_RELEASE_VERSION}"
 
 normalexit "Copied saved versions of package.json and package-lock.json, bumped the version to ${AZ_RELEASE_VERSION}"
