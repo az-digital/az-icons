@@ -20,22 +20,12 @@ errorexit () {
 }
 
 # Show progress on STDERR, unless explicitly quiet.
-if [ -z "$AZ_QUIET" ]; then
-  logmessage () {
-    echo "$1..." >&2
-  }
-  normalexit () {
+normalexit () {
+  if [ -z "$AZ_QUIET" ]; then
     echo "$1." >&2
-    exit 0
-  }
-else
-  logmessage () {
-    return
-  }
-  normalexit () {
-    exit 0
-  }
-fi
+  fi
+  exit 0
+}
 
 #------------------------------------------------------------------------------
 # Initial run-time error checking.
