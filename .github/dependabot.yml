@@ -8,20 +8,29 @@ updates:
     reviewers:
       - "az-digital/developers"
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
     labels:
+      - "dependencies"
       - "ci"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    target-branch: "main"
     reviewers:
       - "az-digital/developers"
+    cooldown:
+      default-days: 5
     labels:
+      - "dependencies"
+      - "github_actions"
       - "ci"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
+    target-branch: "main"
     reviewers:
       - "az-digital/developers"
     ignore:
@@ -29,4 +38,5 @@ updates:
         update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 10
     labels:
+      - "dependencies"
       - "ci"
