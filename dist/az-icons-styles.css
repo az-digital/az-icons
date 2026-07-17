@@ -91,3 +91,18 @@
 .az-icon-blue-sky:before {
     content: "\e915";
 }
+.az-icon-facebook-circle:before {
+  content: "\e916";
+}
+.az-icon-instagram-circle:before {
+  content: "\e917";
+}
+.az-icon-linkedin-circle:before {
+  content: "\e918";
+}
+.az-icon-x-twitter-circle:before {
+  content: "\e919";
+}
+.az-icon-youtube-circle:before {
+  content: "\e91a";
+}
