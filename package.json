@@ -16,7 +16,7 @@
         "copy:css": "cp src/az-icons-styles.css dist/az-icons-styles.css",
         "copy": "npm-run-all copy:pngs copy:fonts copy:css",
         "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --output dist/ --batch --batch-suffix \".min\" \"dist/*.css\" \"!dist/*.min.css\"",
-        "svg-minify": "svgo -f src/svg -o dist/svg",
+        "svg-minify": "svgo --config=svgo.config.js -f src/svg -o dist/svg",
         "dist": "run-s clean mkdirs copy svg-minify css-minify"
     },
     "author": "Arizona Digital Contributors",
