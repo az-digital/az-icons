@@ -38,6 +38,17 @@ mapped to [Unicode's Private Use Area
 the glyphs will not be associated with any letters or characters which may be
 otherwise used symantically.
 
+#### Using `selection.json`
+This repository keeps a `src/selection.json` — IcoMoon's project file for this font,
+storing every existing icon plus the exact PUA code it's mapped to.
+
+- [ ] **Load it before changing anything.** In IcoMoon, use the hamburger menu (top
+  left) → *Manage Projects*, or just drag the file into the app. This restores the full
+  current icon set with all codepoints already assigned, so IcoMoon won't reassign or
+  duplicate codes for icons that already exist.
+- [ ] **Save the updated file back afterward.** Generating a font produces a fresh
+  `selection.json` in the download — overwrite `src/selection.json` with it, so the next
+  contributor's project includes whatever you just added.
 
 When new icons are added the font files will need to be regenerated:
 
@@ -61,6 +72,7 @@ az-icons
 ├── demo.html
 └── src
     ├── az-icons-styles.css
+    ├── selection.json
     ├── fonts
     │   ├── az-icons.eot
     │   ├── az-icons.svg
