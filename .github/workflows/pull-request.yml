@@ -8,6 +8,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Run ShellCheck
-        uses: azohra/shell-linter@6bbeaa868df09c34ddc008e6030cfe89c03394a1 # v0.6.0
+        uses: azohra/shell-linter@30a9cf3f6cf25c08fc98f10d7dc4167f7b5c0c00 # v0.8.0
         with:
           exclude-paths: Dockerfile, .github/CODEOWNERS, .github/ISSUE_TEMPLATE
